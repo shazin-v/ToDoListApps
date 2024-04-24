@@ -12,8 +12,10 @@ dist
 dist-ssr
 *.local
 
+.env
 node_modules
 server/node_modules
+server/.env
 
 # Editor directories and files
 .vscode/*
@@ -27,7 +29,7 @@ server/node_modules
 *.sw?
 
 # Ignore server folder
-server/models
+server/.env
 
 # Ignore .env file
 .env
