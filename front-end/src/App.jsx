@@ -1,4 +1,4 @@
-import { BrowserRouter, Route,  Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Add from "./pages/Add";
@@ -6,7 +6,6 @@ import Edit from "./pages/Edit";
 import View from "./pages/View";
 import Homepage from "./pages/Homepage";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./App.css";
 
 export default function App() {

@@ -34,12 +34,16 @@ export default function Homepage() {
   return (
     <>
       <Navbar />
-      <div className="d-flex  container-sm  my-5  flex-wrap" style={{backgroundColor:"#7F7F98"}}>
+      <div
+        className="d-flex  container-sm  my-5  flex-wrap"
+        style={{ backgroundColor: "#7F7F98" }}
+      >
         {projectcount.length > 0 ? (
           projectcount.map((Project) => (
             <div
-              key={Project._id} 
-              className="mx-4 p-4  mx-4 my-4 " style={{backgroundColor:"#3B3B54"}}
+              key={Project._id}
+              className="mx-4 p-4  mx-4 my-4 "
+              style={{ backgroundColor: "#3B3B54" }}
               onClick={() => handleCardclick(Project._id)}
             >
               <h1>{Project.title}</h1>

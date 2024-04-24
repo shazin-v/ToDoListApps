@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Add () {
+export default function Add() {
   const [projectTitle, setProjectTitle] = useState("");
   const [task, setTask] = useState();
   const navigate = useNavigate();
@@ -35,7 +35,10 @@ export default function Add () {
   return (
     <>
       <Navbar />
-      <div className="mx-4 p-4  mx-5 my-4" style={{backgroundColor:"#7F7F98"}}>
+      <div
+        className="mx-4 p-4  mx-5 my-4"
+        style={{ backgroundColor: "#7F7F98" }}
+      >
         <form onSubmit={handleForm}>
           <div className="d-flex align-items-center">
             <input

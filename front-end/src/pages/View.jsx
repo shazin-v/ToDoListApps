@@ -7,7 +7,6 @@ import axios from "axios";
 export default function View() {
   const navigate = useNavigate();
   const { _id } = useParams();
-
   const [projectData, setProjectdata] = useState([]);
   const [newDate, setnewDate] = useState();
 
@@ -34,8 +33,6 @@ export default function View() {
         const response = await axios.get(`http://localhost:3000/view/${_id}`);
         console.log("response", response);
         setProjectdata(response.data.project);
-
-        // Find the latest updatedDate among all todos
         let latestUpdatedDate = null;
         response.data.todos.forEach((todo) => {
           if (
@@ -46,20 +43,21 @@ export default function View() {
             latestUpdatedDate = new Date(todo.updatedDate);
           }
         });
-        // Set the latest updatedDate to state
         setnewDate(latestUpdatedDate);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchData();
   }, [_id]);
 
   return (
     <>
       <Navbar />
-      <div className="mx-4 p-4  mx-4 my-4" style={{backgroundColor:"#7F7F98"}}>
+      <div
+        className="mx-4 p-4  mx-4 my-4"
+        style={{ backgroundColor: "#7F7F98" }}
+      >
         {Object.keys(projectData).length > 0 ? (
           <div key={projectData._id}>
             <h6 className="d-flex float-end">
@@ -72,7 +70,6 @@ export default function View() {
             {projectData.todos.map((todo) => (
               <div key={todo._id} className="todo-item">
                 <h6 className="d-flex float-end">
-                  {/* Updated at {todo.updatedDate} */}
                   updated at
                   {new Date(todo.updatedDate).toLocaleString("en-US", {
                     timeZone: "Asia/Kolkata",
@@ -89,11 +86,9 @@ export default function View() {
                     type="checkbox"
                     value=""
                   />
-                <p className="mx-3">{todos.description}</p>
-
+                  <p className="mx-3">{todos.description}</p>
                 </div>
               </div>
-              
             ))}
             <h4>Completed tasks</h4>
             {projectData.todos.map((todos) => (
@@ -104,8 +99,9 @@ export default function View() {
                     type="checkbox"
                     value=""
                   />
-                <p className="mx-3 text-center mx-1 border-0">{todos.description}</p>
-
+                  <p className="mx-3 text-center mx-1 border-0">
+                    {todos.description}
+                  </p>
                 </div>
               </div>
             ))}

@@ -4,11 +4,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
-
-
-
-export default function Edit () {
+export default function Edit() {
   const { _id } = useParams();
   const [createdate, setCreatedate] = useState();
   const [title, setTitle] = useState("");
@@ -86,7 +82,10 @@ export default function Edit () {
   return (
     <>
       <Navbar />
-      <div className="mx-4 p-4  mx-5 my-4" style={{backgroundColor:"#7F7F98"}}>
+      <div
+        className="mx-4 p-4  mx-5 my-4"
+        style={{ backgroundColor: "#7F7F98" }}
+      >
         <div className="d-flex align-items-center">
           <input
             type="text"
